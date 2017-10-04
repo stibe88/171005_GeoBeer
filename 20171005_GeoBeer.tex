@@ -21,7 +21,7 @@
 \usetheme{FHNW}
 \usecolortheme{seagull}
 \usepackage{multimedia}
-
+\usepackage{tikz}
 \usepackage{hyperref}
 
 
@@ -36,7 +36,7 @@
 /Keywords (Mobile Mapping, Multisensorsystem, BIM, Indoor, Python, ROS)}
 
 % infos for title page
-\title{\textbf{Entwicklung des Multisensorsystems BIMAGE.CapturePro-Backpack für die kinematische bildbasierte Innenraumaufnahme}}
+\title{\textbf{Entwicklung des Multisensorsystems BIMAGE.\-Capture\-Pro-Backpack für die kinematische bildbasierte Innenraumaufnahme}}
 \subtitle{GeoBeer \#17}
 \author{Stefan Blaser}
 \institute{Institut Vermessung und Geoinformation}
@@ -49,24 +49,61 @@
 \end{frame}
 
 % project video
-\begin{frame}
-   \movie[showcontrols]{\includegraphics[width=1\textwidth]{./Abbildungen/CaptureProBackpack.JPG}}{./Abbildungen/pr_video_bimage_web.mp4}
+\begin{frame}[plain]
+  \begin{tikzpicture}[remember picture,overlay]
+    \node[anchor=south west, inner sep=0pt] at (current page.south west) {
+    \movie[showcontrols, autostart]{\includegraphics[width=1\paperwidth]{./Abbildungen/CaptureProBackpack.JPG}}{./Abbildungen/pr_video_bimage_web.mp4}
+    };
+  \end{tikzpicture}
 \end{frame}
 
 % evolution
 \begin{frame}
-\frametitle{Evolution}
-% - Wagen: Sensorintegration
-% - Rucksack 1: Datenakquisition, SLAM post-processing
-% - Rucksack 2: Echtzeit-SLAM
+\frametitle{CapturePro-Entwicklung}
+  \begin{columns}[onlytextwidth]
+    \begin{column}{0.33\textwidth}
+      \includegraphics[height=0.7\textheight]{./Abbildungen/cappro_1.JPG}
+      \\
+      Sensorintegration
+    \end{column}
+    \begin{column}{0.33\textwidth}
+      \includegraphics[height=0.7\textheight]{./Abbildungen/cappro_2.JPG}
+      \\
+      Datenakquisition
+    \end{column}
+    \begin{column}{0.33\textwidth}
+      \includegraphics[height=0.7\textheight]{./Abbildungen/cappro_3.JPG}
+      \\
+      Online-SLAM
+    \end{column}
+  \end{columns}
 \end{frame}
 
 % aktueller Stand
 \begin{frame}
 \frametitle{Aktueller Status}
-% - Diagramm Komponenten
-% - Bild Backpack aktuell HW-Beschriftung
-% - Resultate: Orientierte Bilder (Näherungswerte, ca. 10 cm Genauigkeit), Punktwolke (Abfallprodukt SLAM)
+  \begin{columns}[onlytextwidth]
+    \begin{column}{0.33\textwidth}
+      \includegraphics[height=0.7\textheight]{./Abbildungen/cappro_3.JPG}
+    \end{column}
+    \begin{column}{0.66\textwidth}
+      \begin{itemize}
+       \item Integrierte Sensoren:
+	 \begin{tabular}{ll}
+	\textbf{Kamera} & Ladybug5\\
+	\textbf{Laserscanner} & Velodyne VLP-16\\
+	\textbf{IMU} & XSens MTI-200
+	 \end{tabular}
+       \item Software (Open-Source): \newline
+      \begin{tabular}{ll}
+	\includegraphics[height=0.5cm]{./Abbildungen/ros_logo.png} & Robot Operating System (ROS) \\
+	\includegraphics[height=0.7cm]{./Abbildungen/20636162.png} & Google Cartographer (SLAM)\\
+	\includegraphics[height=0.7cm]{./Abbildungen/opengraph-icon-200x200.png} & Python\\
+	\includegraphics[height=0.7cm]{./Abbildungen/cpp_logo.png} & C++
+       \end{tabular}
+      \end{itemize}
+    \end{column}
+  \end{columns}
 \end{frame}
 
 \begin{frame}
@@ -102,391 +139,55 @@
 \end{frame}
 
 % - evtl. Kurzvideo Betrieb
+\begin{frame}[plain]
+  \begin{tikzpicture}[remember picture,overlay]
+    \node[anchor=south west, inner sep=0pt] at (current page.south west) {
+    \movie[showcontrols, autostart]{\includegraphics[width=1\paperwidth]{./Abbildungen/CaptureProBackpack.JPG}}{./Abbildungen/cappro_opt.mp4}
+    };
+  \end{tikzpicture}
+\end{frame}
 
 % Ausblick
 \begin{frame}
-\frametitle{Ausblick}
-% - Beleuchtung
-% - 360°-Stereokonfiguration
-% - Globaler Bezugsrahmen
+\frametitle{Fazit \& Ausblick}
+  \begin{itemize}
+   \item Fazit
+   \begin{itemize}
+    \item Indoor Mobile Mapping-System entwickelt
+    \item Output: Orientierte Bilder (Näherungswerte)
+    \item Forschungsprototyp $\rightarrow$ Untersuchung verschiedener Sensorkonfigurationen (Positionierung und Datenerfassung)
+    \item Online-SLAM
+   \end{itemize}
+   \pause
+   \item Ausblick
+   \begin{itemize}
+    \item Beleuchtung / Blitzlicht
+    \item $360^\circ$-Stereokonfiguration (Orientierte 3D-Bilder)
+    \item Optimierung SLAM-Konfiguration
+    \item Kalibrierung des Gesamtsystems
+    \item Indoor \& Outdoor-Navigation (zusätzliches GNSS\&INS)
+   \end{itemize}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+   \begin{columns}[onlytextwidth]
+    \begin{column}{0.33\textwidth}
+      \includegraphics[height=0.7\textheight]{./Abbildungen/cappro_3.JPG}
+    \end{column}
+    \begin{column}{0.66\textwidth}
+      \textbf{Danke für die Aufmerksamkeit!} \newline
+      Gelegenheit für Fragen gibt's beim \newline
+      \includegraphics[width=0.6\textwidth]{./Abbildungen/beer.JPG} \newline
+      Stefan Blaser\newline
+      @stibe88
+    \end{column}
+  \end{columns}
 \end{frame}
 
 
-% \section{Introduction}
-
-% Frame 2: Mobile Mapping
-  % \begin{frame}
-   % \frametitle{Introduction}
-   % \begin{columns}[onlytextwidth]
-
-    % \begin{column}{0.5\textwidth}
-    % Mobile Mapping
-      % \begin{itemize}
-       % \item Image-based Mobile Mapping \newline(since 2011 @ FHNW)
-       % \item Spin-off company iNovitas
-       % \item ``Google Street View''-like service
-       % \item Measurement functionality
-       % \item Measurement accuracy:
-       % \begin{itemize}
-        % \item relative: ca. $1\, cm$
-        % \item absolute: ca. $3-5\, cm$ \newline(GNSS accuracy)
-       % \end{itemize}
-       % \citep{Burkhard2012}
-      % \end{itemize}
-    % \end{column}
-    % \begin{column}{0.5\textwidth}
-    
-     % \begin{figure}[h]
-       % \centering
-       % \includegraphics[width=5.5cm]{./Abbildungen/mms.png}
-       % \caption{Mobile Mapping vehicle of FHNW}
-       % \label{abb:mms}
-     % \end{figure}
-     
-    % \end{column}
-    
-   % \end{columns}
-  % \end{frame}
-
-% % Frame 3: CTI-Project BIMAGE
-  % \begin{frame}
-   % \frametitle{Introduction}
-   % \begin{columns}[onlytextwidth]
-
-    % \begin{column}{0.5\textwidth}
-    % CTI project ``BIMAGE''
-      % \begin{itemize}
-       % \item Main Goal: 
-       % \begin{itemize}\item Transfer outdoor technology into interior spaces\end{itemize}
-       % \pause
-       % \item Deliverables:
-       % \begin{itemize}
-        % \item \textbf{Indoor Mobile Mapping System} (IMMS) (absence of GNSS) \pause
-        % \item Software to follow changes using mobile devices \pause
-        % \item New navigation concepts for cloud application \pause
-        % \item Sophisticated photogrammetric image post-processing approaches 
-       % \end{itemize}
-      % \end{itemize}
-    % \end{column}
-    % \begin{column}{0.5\textwidth}
-    % \begin{center}
-    % \includegraphics[width=0.9\textwidth]{./Abbildungen/FHNW_HABG_10mm.jpg} \\
-    % % FHNW_HABG_10mm.jpg: 0x0 pixel, 300dpi, 0.00x0.00 cm, bb=
-    % \includegraphics[width=0.2\textwidth]{./Abbildungen/iNovitas_Logo.png} \\
-    % % iNovitas_Logo.png: 0x0 pixel, 300dpi, 0.00x0.00 cm, bb=
-    % \includegraphics[width=0.7\textwidth]{./Abbildungen/F&E_Absender_Dritte_Un_D_1200.png}
-% % F&E_Absender_Dritte_Un_D_1200.png: 0x0 pixel, 300dpi, 0.00x0.00 cm, bb=
-    % \end{center}
-    
-    % \end{column}
-    
-   % \end{columns}
-  % \end{frame}
 
 
-% \section{Software Requirements}
-
-  % \begin{frame}
-   % \frametitle{Indoor mobile mapping system prototype}
-   % \begin{columns}[onlytextwidth]
-    % \begin{column}{0.5\textwidth}
-      % \def\svgwidth{5.5cm}
-      % \input{./Abbildungen/imms_explanation.pdf_tex}
-    % \end{column}
-    % \begin{column}{0.5\textwidth}
-      % \begin{itemize}
-        % \item multi sensor system
-	% \item weight: $30\,kg$ ($66.1\, lbs$)
-	% \item research prototype
-	% \item hardware components might change during project time
-       % \pause
-       % \item acquisition software requirements:
-       % \begin{itemize}
-       % \item Modular software architecture
-       % \item Free open source software (FOSS)
-       % \item Existing modules for hardware support
-       % \end{itemize}
-      % \end{itemize}
-    % \end{column}
-
-   % \end{columns}
-  % \end{frame}
-
-% \section{Robot Operating System (ROS)}
-
-  % \begin{frame}
-   % \frametitle{Robot Operating System (ROS)}
-   % \begin{columns}[onlytextwidth]
-    % \begin{column}{0.5\textwidth}
-    
-      % \begin{itemize}
-       % \item Software framework for robots 
-       % \item Free and Open-Source 
-       % \item Graph-based communication layer 
-       % \item Collection of tools and libraries 
-       % \item Multi-lingual 
-       % \begin{itemize}
-	% \item C++
-	% \item \textbf{Python} 
-       % \end{itemize}
-       % \cite{Quigley2009}
-       % \item \url{www.ros.org}
-      % \end{itemize}
-    
-    % \end{column}
-    % \begin{column}{0.5\textwidth}
-
-    % \includegraphics[width=1.5\textwidth]{./Abbildungen/ros_screenshot.png}
-    % % ros_screenshot.png: 0x0 pixel, 300dpi, 0.00x0.00 cm, bb=
-    
-    % \end{column}
-   % \end{columns}
-  % \end{frame}
-
-  % \begin{frame}
-   % \frametitle{Graph-based communication layer}
-   % \begin{columns}[onlytextwidth]
-    % \begin{column}{0.5\textwidth}
-    
-      % \begin{description}
-       % \item [\textbf{Node}] software module, process
-       % \item [\textbf{Messages}] data in a predefined structure
-       % \item [\textbf{Topic}] where messages go through
-       % \item [\textbf{Service}] allows synchronous communication (request / response)
-      % \end{description}
-       
-    % \end{column}
-    % \begin{column}{0.5\textwidth}
-
-      % \begin{figure}[h]
-	% \centering
-	% \includegraphics[width=\textwidth]{./Abbildungen/ROS-Graph-basic.png}
-	% % ROS-Graph-basic.png: 0x0 pixel, 300dpi, 0.00x0.00 cm, bb=
-	% \caption{ROS communication principle}
-	% \label{abb:graph}
-      % \end{figure}
-    % \end{column}
-   % \end{columns}
-  % \end{frame}
-
-% \section{Implemented Acquistion Software}
-
-  % \begin{frame}
-   % \frametitle{Acquisition software design}
-    
-    % \begin{figure}[h]
-      % \centering
-      % \includegraphics[width=13.5cm]{./Abbildungen/ROSImageCapturing.png}
-      % % ROSImageCapturing.png: 0x0 pixel, 300dpi, 0.00x0.00 cm, bb=
-      % %\caption{Graph-based software design of the image acquisition part}
-      % \label{abb:ROSImageCapturing}
-    % \end{figure}
-
-  % \end{frame}
-  
-  % \begin{frame}
-   % \frametitle{Acquisition software design}
-    
-    % \begin{figure}[h]
-      % \centering
-      % \includegraphics[width=13.5cm]{./Abbildungen/ROSImageCapturingFrame.png}
-      % % ROSImageCapturing.png: 0x0 pixel, 300dpi, 0.00x0.00 cm, bb=
-      % %\caption{Graph-based software design of the image acquisition part}
-      % \label{abb:ROSImageCapturingFrame}
-    % \end{figure}
-
-  % \end{frame}
-
-% % Python listings image event counter
-% \defverbatim[colored]\lstOne{
-  % \begin{lstlisting}[language=python, basicstyle=\ttfamily, keywordstyle=\color{blue}]
-% #!/usr/bin/env python
-% import rospy
-% from std_msgs.msg import *
-
-% class ImageEventCounter():
-    % [...]
-
-% def main():
-    % [...]
-
-% if __name__ == '__main__':
-    % main()
-  % \end{lstlisting}
-% }
-% \defverbatim[colored]\lstTwo{
-  % \begin{lstlisting}[language=python, basicstyle=\ttfamily, keywordstyle=\color{blue}]
-% def main():
-    % rospy.init_node("ImageEventCounter", 
-                    % anonymous=True)
-    % image_event_counter_node = ImageEventCounter()
-    % try:
-        % rospy.spin()
-    % except KeyboardInterrupt:
-        % pass
-  % \end{lstlisting}
-% }
-% \defverbatim[colored]\lstThree{
-  % \begin{lstlisting}[language=python, basicstyle=\ttfamily, keywordstyle=\color{blue}]
-% class ImageEventCounter():
-    % def __init__(self):
-        % # read out parameter
-        % self.counter = \
-            % rospy.get_param('counter_start', 0)
-        % subscriber_tn = \
-            % rospy.get_param('subscriber_name', 
-                            % '/trigger_time')
-        % publisher_tn = \
-            % rospy.get_param('publisher_name', 
-                            % '/image_nr')
-	% [...]
-  % \end{lstlisting}
-% }
-% \defverbatim[colored]\lstFour{
-  % \begin{lstlisting}[language=python, basicstyle=\ttfamily, keywordstyle=\color{blue}]
-% class ImageEventCounter():
-    % def __init__(self):
-	% [...]
-	% self.trigger_time_sub = \
-	    % rospy.Subscriber(subscriber_tn,
-                             % Time,
-                             % self.subscriber_callback)
-        % self.trigger_count_pub = \
-	    % rospy.Publisher(publisher_tn,
-                            % UInt32,
-                            % queue_size=1)
-    % def subscriber_callback(self, time):
-        % [...]
-  % \end{lstlisting}
-% }
-% \defverbatim[colored]\lstFive{
-  % \begin{lstlisting}[language=python, basicstyle=\ttfamily, keywordstyle=\color{blue}]
-% class ImageEventCounter():
-    % def __init__(self):
-	% [...]
-    % def subscriber_callback(self, time):
-        % self.counter += 1
-        % self.trigger_count_pub(UInt32(\
-                               % self.counter))
-  % \end{lstlisting}
-% }
-
-% \begin{frame}
- % \frametitle{ImageEventCounter -- node structure}
- % \lstOne
-% \end{frame}
-
-% \begin{frame}
- % \frametitle{ImageEventCounter -- main function}
- % \lstTwo
-% \end{frame}
-
-% \begin{frame}
- % \frametitle{ImageEventCounter -- read out parameter}
- % \lstThree
-% \end{frame}
-
-% \begin{frame}
- % \frametitle{ImageEventCounter -- publisher / subscriber}
- % \lstFour
-% \end{frame}
-
-% \begin{frame}
- % \frametitle{ImageEventCounter -- subscriber callback}
- % \lstFive
-% \end{frame}
-
-  % \begin{frame}
-   % \frametitle{Controller node}
-    
-    % \begin{figure}[h]
-      % \centering
-      % \includegraphics[width=13.5cm]{./Abbildungen/ROSImageCapturingGUI.png}
-      % % ROSImageCapturing.png: 0x0 pixel, 300dpi, 0.00x0.00 cm, bb=
-      % %\caption{Graph-based software design of the image acquisition part}
-      % %\label{abb:ROSImageCapturing}
-    % \end{figure}
-
-  % \end{frame}
-  
-  % \begin{frame}
-   % \frametitle{Controller node}
-    
-    % \begin{itemize}
-     % \item dynamic parameter changes
-     % \item change node settings
-     % \item launches and kills nodes
-     % \item GUI 
-     % \begin{itemize}
-      % \item developed with pyqt4
-      % \item put ROS node into pyqt4-loop
-      % \item \textit{rospy.spin()} becomes obivious
-    % \end{itemize}
-    % \end{itemize}
-
-  % \end{frame}
-  
-  % \begin{frame}
-   % %\frametitle{Controller node -- GUI}
-   % \begin{center}
-    % \includegraphics[width=10cm]{./Abbildungen/GUI_1.png}
-    % % GUI_1.png: 0x0 pixel, 300dpi, 0.00x0.00 cm, bb=
-   % \end{center}
-  % \end{frame}
-  
-  % \begin{frame}
-   % %\frametitle{Controller node -- GUI}
-   % \begin{center}
-    % \includegraphics[width=10cm]{./Abbildungen/GUI_2.png}
-    % % GUI_1.png: 0x0 pixel, 300dpi, 0.00x0.00 cm, bb=
-   % \end{center}
-  % \end{frame}
-
-  % \begin{frame}
-   % %\frametitle{Controller node -- GUI}
-   % \begin{center}
-    % \includegraphics[width=10cm]{./Abbildungen/GUI_3.png}
-    % % GUI_1.png: 0x0 pixel, 300dpi, 0.00x0.00 cm, bb=
-   % \end{center}
-  % \end{frame}
-  
-  % \begin{frame}
-   % %\frametitle{Controller node -- GUI}
-   % \begin{center}
-    % \includegraphics[width=10cm]{./Abbildungen/GUI_4.png}
-    % % GUI_1.png: 0x0 pixel, 300dpi, 0.00x0.00 cm, bb=
-   % \end{center}
-  % \end{frame}
-  
-  % \begin{frame}
-   % \frametitle{SLAM (post processing)}
-   % \begin{itemize}
-    % \item simultaneous localization and mapping (SLAM)
-    % \item different SLAM techniques (lidar-based, visual-based, ...)
-    % \item some SLAM algorithms are supporting loop closure
-    % \item possible subtitution of GNSS in indoor environment
-    % \pause
-    % \item Google cartographer
-    % \begin{itemize}
-     % \item lidar-based SLAM algorithm with IMU support
-     % \item Open source software since 05.10.2016
-     % \item ROS support
-     % \item both, 2D and 3D SLAM version \citep{Hess2016}
-     % \item loop closure
-    % \end{itemize}
-   % \end{itemize}
-  % \end{frame}
-  
-  % \begin{frame}
-   % %\frametitle{SLAM (post processing)}
-   % \movie[showcontrols]{\includegraphics[width=1\textwidth]{./Abbildungen/Video.jpg}}{./Abbildungen/mymovie.mp4}
-   % %\movie[width=3cm,height=2cm,poster]{}{./Abbildungen/mymovie.mp4}
-   % %TODO insert right!!! video
-  % \end{frame}
-
-
-
-% \section{Conclusion and Outlook}
 
 % \begin{frame}
  % \frametitle{Conclusion}
