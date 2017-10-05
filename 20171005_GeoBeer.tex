@@ -52,7 +52,7 @@
 \begin{frame}[plain]
   \begin{tikzpicture}[remember picture,overlay]
     \node[anchor=south west, inner sep=0pt] at (current page.south west) {
-    \movie[showcontrols, autostart]{\includegraphics[width=1\paperwidth]{./Abbildungen/CaptureProBackpack.JPG}}{./Abbildungen/pr_video_bimage_web.mp4}
+    \movie[showcontrols, autostart]{\includegraphics[width=1\paperwidth]{./Abbildungen/Projektpartner.png}}{./Abbildungen/pr_video_bimage_web.mp4}
     };
   \end{tikzpicture}
 \end{frame}
@@ -69,7 +69,7 @@
     \begin{column}{0.33\textwidth}
       \includegraphics[height=0.7\textheight]{./Abbildungen/cappro_2.JPG}
       \\
-      Datenakquisition
+      Datenerfassung
     \end{column}
     \begin{column}{0.33\textwidth}
       \includegraphics[height=0.7\textheight]{./Abbildungen/cappro_3.JPG}
@@ -90,12 +90,11 @@
       \begin{itemize}
        \item Integrierte Sensoren:
 	 \begin{tabular}{ll}
+	\multicolumn{2}{l}{Integrierte Sensoren:}
 	\textbf{Kamera} & Ladybug5\\
 	\textbf{Laserscanner} & Velodyne VLP-16\\
 	\textbf{IMU} & XSens MTI-200
-	 \end{tabular}
-       \item Software (Open-Source): \newline
-      \begin{tabular}{ll}
+	\multicolumn{2}{l}{Software (Open-Source)}
 	\includegraphics[height=0.5cm]{./Abbildungen/ros_logo.png} & Robot Operating System (ROS) \\
 	\includegraphics[height=0.7cm]{./Abbildungen/20636162.png} & Google Cartographer (SLAM)\\
 	\includegraphics[height=0.7cm]{./Abbildungen/opengraph-icon-200x200.png} & Python\\
@@ -106,43 +105,11 @@
   \end{columns}
 \end{frame}
 
-\begin{frame}
-\frametitle{Design Erfassungssoftware}
-     \begin{figure}[h]
-       \centering
-       \includegraphics[width=13.5cm]{./Abbildungen/ROSImageCapturing_1.png}
-     \end{figure}
-\end{frame}
-
-\begin{frame}
-\frametitle{Design Erfassungssoftware}
-     \begin{figure}[h]
-       \centering
-       \includegraphics[width=13.5cm]{./Abbildungen/ROSImageCapturing_2.png}
-     \end{figure}
-\end{frame}
-
-\begin{frame}
-\frametitle{Design Erfassungssoftware}
-     \begin{figure}[h]
-       \centering
-       \includegraphics[width=13.5cm]{./Abbildungen/ROSImageCapturing_3.png}
-     \end{figure}
-\end{frame}
-
-\begin{frame}
-\frametitle{Design Erfassungssoftware}
-     \begin{figure}[h]
-       \centering
-       \includegraphics[width=13.5cm]{./Abbildungen/ROSImageCapturing_4.png}
-     \end{figure}
-\end{frame}
-
 % - evtl. Kurzvideo Betrieb
 \begin{frame}[plain]
   \begin{tikzpicture}[remember picture,overlay]
     \node[anchor=south west, inner sep=0pt] at (current page.south west) {
-    \movie[showcontrols, autostart]{\includegraphics[width=1\paperwidth]{./Abbildungen/CaptureProBackpack.JPG}}{./Abbildungen/cappro_opt.mp4}
+    \movie[showcontrols]{\includegraphics[width=1\paperwidth]{./Abbildungen/CaptureProBackpack.JPG}}{./Abbildungen/cappro_opt.mp4}
     };
   \end{tikzpicture}
 \end{frame}
@@ -184,52 +151,5 @@
     \end{column}
   \end{columns}
 \end{frame}
-
-
-
-
-
-% \begin{frame}
- % \frametitle{Conclusion}
- % \begin{itemize}
-  % \item IMMS acquisition software successfully implemented $\rightarrow$ based on ROS
-  % \item graph-based architecture $\rightarrow$ flexibility \pause
-  % \item numerous existing free open source ROS packages available
-  % \item from hardware node up to SLAM algorithm \pause
-  % \item wide ROS community $\rightarrow$ quasi-standard in robotics \pause
-  % \item learning curve
- % \end{itemize}
-
-% \end{frame}
-
-% \begin{frame}
- % \frametitle{Outlook}
- % \begin{itemize}
-  % \item Indoor localization $\rightarrow$ Replacement of INS by SLAM
-  % \item real time SLAM
-  % \item weight loss about $10\,kg$
-  % \item use SLAM map as progress control
-  % \item replacement of ladybug5 camera by a stereo panorama camera
-  % \item several GUI optimizations
-  % \item ...
- % \end{itemize}
-
-% \end{frame}
-
-% \begin{frame}
-% %\bibliography{20170510_GeoPython}
-% \frametitle{Literature}
-% \small\setbeamertemplate{bibliography item}[text]\bibliography{20170510_GeoPython}
-
-% \bibliographystyle{dcu}
-% %\renewcommand{\bibliography}
-% \end{frame}
-
-% \begin{frame}
- % \frametitle{Thank you for your attention!}
- % \begin{itemize}
-  % \item Questions?
- % \end{itemize}
-% \end{frame}
 
 \end{document}
