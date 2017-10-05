@@ -59,7 +59,7 @@
 
 % evolution
 \begin{frame}
-\frametitle{CapturePro-Entwicklung}
+\frametitle{CapturePro -- Entwicklung}
   \begin{columns}[onlytextwidth]
     \begin{column}{0.33\textwidth}
       \includegraphics[height=0.7\textheight]{./Abbildungen/cappro_1.JPG}
@@ -87,23 +87,21 @@
       \includegraphics[height=0.7\textheight]{./Abbildungen/cappro_3.JPG}
     \end{column}
     \begin{column}{0.66\textwidth}
-      \begin{itemize}
-       \item Integrierte Sensoren:
-	 \begin{tabular}{ll}
-	\multicolumn{2}{l}{Integrierte Sensoren:}
+      \begin{tabular}{ll}
+ 	\multicolumn{2}{l}{Integrierte Sensoren:}\\
 	\textbf{Kamera} & Ladybug5\\
 	\textbf{Laserscanner} & Velodyne VLP-16\\
-	\textbf{IMU} & XSens MTI-200
-	\multicolumn{2}{l}{Software (Open-Source)}
+	\textbf{IMU} & XSens MTI-200\\
+	&\\
+ 	\multicolumn{2}{l}{Software (Open-Source):}\\
 	\includegraphics[height=0.5cm]{./Abbildungen/ros_logo.png} & Robot Operating System (ROS) \\
 	\includegraphics[height=0.7cm]{./Abbildungen/20636162.png} & Google Cartographer (SLAM)\\
 	\includegraphics[height=0.7cm]{./Abbildungen/opengraph-icon-200x200.png} & Python\\
 	\includegraphics[height=0.7cm]{./Abbildungen/cpp_logo.png} & C++
        \end{tabular}
-      \end{itemize}
     \end{column}
   \end{columns}
-\end{frame}
+  \end{frame}
 
 % - evtl. Kurzvideo Betrieb
 \begin{frame}[plain]
@@ -122,16 +120,21 @@
    \begin{itemize}
     \item Indoor Mobile Mapping-System entwickelt
     \item Output: Orientierte Bilder (Näherungswerte)
+    \pause
     \item Forschungsprototyp $\rightarrow$ Untersuchung verschiedener Sensorkonfigurationen (Positionierung und Datenerfassung)
+    \pause
     \item Online-SLAM
    \end{itemize}
    \pause
    \item Ausblick
    \begin{itemize}
     \item Beleuchtung / Blitzlicht
+    \pause
     \item $360^\circ$-Stereokonfiguration (Orientierte 3D-Bilder)
+    \pause
     \item Optimierung SLAM-Konfiguration
     \item Kalibrierung des Gesamtsystems
+    \pause
     \item Indoor \& Outdoor-Navigation (zusätzliches GNSS\&INS)
    \end{itemize}
   \end{itemize}
